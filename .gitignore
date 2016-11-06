@@ -1,4 +1,6 @@
 *.class
+.classpath
+.project
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -10,3 +12,26 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+
+# my staff
+github-recovery.txt
+notes.txt
+/bin/
+
+*.txt
+*.key
+*.pem
+*.jks
+*.p12
+lista2/DecryptedMessages
+lista3/fileToEncrypt.txt.enc
+lista3/fileToEncrypt.txt.new
+lista3/fileToEncryptWithKey2.txt.enc
+lista3/fileToEncryptWithKey2.txt.new
+lista3/Jonas.mp3
+lista3/JonasEncrypted.mp3
+lista3/Kungs.mp3
+lista3/KungsEncrypted.mp3
+lista3/KeyStore.jks
+lista3/playerConfig.txt.enc
