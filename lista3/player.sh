@@ -62,12 +62,13 @@ fi
 keytool -importkeystore -srckeystore $keyStore -destkeystore KeyStore.p12 -deststoretype PKCS12 -srcalias $keyAlias -deststorepass $password -destkeypass $password
 
 openssl pkcs12 -in KeyStore.p12  -nodes -nocerts -out key.pem
-openssl rsa -outform der -in key.pem -out key.key
+openssl pkcs8 -topk8 -inform PEM -outform DER -nocrypt -in key.pem -out p8key.pem
+#openssl rsa -outform der -in key.pem -out key.key
 
 #keypem=$(openssl pkcs12 -in KeyStore.p12  -nodes -nocerts)
 #keykey=$(openssl rsa -outform der -in "$keypem")
 
-openssl aes-256-cbc -d -a -kfile key.key -iv 12345678123456781234567812345678 -in "$1" -out song.mp3
+openssl aes-256-cbc -d -a -kfile p8key.pem -iv 12345678123456781234567812345678 -in "$1" -out song.mp3
 
 play song.mp3
 
