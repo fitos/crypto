@@ -22,6 +22,8 @@ notes.txt
 *.txt
 *.key
 *.pem
+*.crt
+*.csr
 *.jks
 *.p12
 lista2/DecryptedMessages
